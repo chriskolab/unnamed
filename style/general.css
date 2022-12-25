@@ -1,0 +1,79 @@
+/* Color Patterns
+#112B3C, #205375, #F66B0E, #EFEFEF
+
+*/
+
+/*
+################################################################################
+Header
+*/
+
+/*
+################################################################################
+Footer
+*/
+
+/*
+################################################################################
+General Page Design
+*/
+
+html {
+  font-family: "Comic Sans MS", sans-serif;
+  background-color: whitesmoke;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  margin: 5px;
+}
+
+hr.big { 
+  border: 0; 
+  height: 2px;
+  width: 80%; 
+  margin: auto;
+  background-image: -webkit-linear-gradient(left, #f0f0f0, darkblue, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, darkblue, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, darkblue, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, darkblue, #f0f0f0); 
+}
+
+hr.small { 
+  border: 1px solid lightgray; 
+  width: 100%;
+}
+
+::placeholder {
+   text-align: center; 
+}
+
+/*
+################################################################################
+Container
+*/
+
+/*
+################################################################################
+Buttons
+*/
+
+/*
+################################################################################
+Whitespace
+*/
+
+/*
+################################################################################
+Additionals
+*/
