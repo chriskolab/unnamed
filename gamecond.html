@@ -6,8 +6,10 @@
 
 	<title>SCO</title>
 
-	<link rel="stylesheet" href="css/style.css">
-	<script src="js/script.js"></script>
+	<link rel="stylesheet" href="style/general.css">
+	<link rel="stylesheet" href="style/inputs.css">
+	<script src="script/game_cond.js"></script>
+	<script src="script/webstorage.js"></script>
 </head>
 <body>
 
@@ -55,19 +57,9 @@
 			</div>
 			<div class="container-subarea-gamecond">
 				<div style="flex: 0 0 15%"></div>
-				<label style="flex: 0 0 60%" for="cond-4">Players need to get above/below final points</label>
+				<label style="flex: 0 0 60%" for="cond-4">Game ends when one player hits final points</label>
 				<div style="flex: 1 1 auto"></div>
 				<input type="checkbox" id="cond-4">
-				<div style="flex: 0 0 3.5%" class="tooltip">&nbsp;&#9432;
-					<span class="tooltiptext">Example:<br>The final points are 10000. If selected, a player only wins the game, if one gets above the finals points, i.e. at least 10001.</span>
-				</div>
-				<div style="flex: 0 0 11.5%"></div>
-			</div>
-			<div class="container-subarea-gamecond">
-				<div style="flex: 0 0 15%"></div>
-				<label style="flex: 0 0 60%" for="cond-5">Game ends when one player hits final points</label>
-				<div style="flex: 1 1 auto"></div>
-				<input type="checkbox" id="cond-5">
 				<div style="flex: 0 0 3.5%" class="tooltip">&nbsp;&#9432;
 					<span class="tooltiptext">After one player reaches the final points, the ongoing round is going to be the last round of the game.</span>
 				</div>
