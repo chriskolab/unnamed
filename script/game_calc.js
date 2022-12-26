@@ -263,3 +263,27 @@ function closePopup() {
 	document.getElementById("main-space").style.display = "inline-flex";
 	document.getElementById("enter-number").value = "";
 }
+
+
+
+//
+function quitGame() {
+
+  var btn = document.getElementById("quit-game");
+  var txt = "Are you sure?";
+
+  //Confirm quit game
+  if (btn.innerHTML == txt) {
+
+    window.location = "./";
+
+  }
+
+  btn.innerHTML = txt;
+}
+
+function notQuitGame() {
+
+  document.getElementById("quit-game").innerHTML = "Quit Game";
+
+}
