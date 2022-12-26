@@ -16,10 +16,6 @@ Header
   text-align: center;
 }
 
-.revision::before {
-  content: "v0.0.4, 11.12.2022";
-}
-
 /*
 ################################################################################
 Footer
@@ -33,6 +29,10 @@ Footer
   margin: 0px;
   display: flex;
   justify-content: space-evenly;
+}
+
+.revision::before {
+  content: "v0.0.4, 11.12.2022";
 }
 
 /*
