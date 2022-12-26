@@ -26,6 +26,7 @@ function checkCurrentPlayer() {
 		if (currentPlayerPoints >= finalPoints) {
 			getNextPlayer();
 		} else {
+			console.log("----------checkCurrentPlayer before calling loadingScreen");
 			loadingScreen();
 			playCurrentPlayer();
 		}
@@ -128,10 +129,12 @@ function playCurrentPlayer() {
 
 	//Get data from web storage
 	var gameRound = localStorage.getItem("game-round");
-	var strPlayerNames = localStorage.getItem("player-names")
+	var strPlayerNames = localStorage.getItem("player-names");
 	var strPlayerPoints = localStorage.getItem("player-points");
 	var numPlayers = localStorage.getItem("num-players");
 	var currentPlayer = localStorage.getItem("current-player");
+
+	console.log("----------playCurrentPlayer");
 
 	//Display current game round stats
 	document.getElementById("current-round").innerHTML = "Round " + gameRound;
@@ -222,6 +225,8 @@ function currPlayerNewPoints() {
 
 //
 function loadingScreen() {
+
+	console.log("----------loadingScreen");
 	document.getElementById("main-stats").style.display = "none";
 	document.getElementById("loading-screen").style.display = "flex";
 
