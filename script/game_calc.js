@@ -12,6 +12,10 @@ function checkCurrentPlayer() {
 	var strPlayerPoints = localStorage.getItem("player-points");
 	var currentPlayer = localStorage.getItem("current-player");
 
+	console.log(gameMode);
+	console.log(strPlayerPoints);
+	console.log(currentPlayer);
+
 	//Get current player points
 	const arrPlayerPoints = strPlayerPoints.split(",");         //str2arr
 	var currentPlayerPoints = arrPlayerPoints[currentPlayer - 1];
