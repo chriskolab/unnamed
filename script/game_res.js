@@ -182,6 +182,7 @@ function sortByPlayerPoints() {
 	var temp_points;
 	var temp_switch = 0;
 	var rowID = -1;
+	var allPlayerNames;
 
 	for(i=0;i<numPlayers;i++) {
 
