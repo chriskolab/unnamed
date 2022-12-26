@@ -70,9 +70,7 @@
 
 				<div class="container-subarea-buttons">
 					<button class="button" onclick="closePopup()">Cancel</button>
-					<a href="#">
-						<button class="button button-filled" onclick="currPlayerNewPoints()">Confirm & Next Player</button>
-					</a>
+					<button class="button button-filled" onclick="currPlayerNewPoints()">Confirm & Next Player</button>
 				</div>
 			</div>
 
@@ -81,29 +79,23 @@
 					<button class="button-inactive">Leaderboard</button>
 				</a>
 
-				<a href="#">
-					<button class="button" onclick="openPopup()">Enter Points</button>
-				</a>
+				<button class="button" onclick="openPopup()">Enter Points</button>
 			</div>
 
 			<div class="vspace-small"></div>
 
 			<div class="container-subarea-buttons" id="main-buttons-2">
-				<!--<a href="index.html">-->
+				<a href="./">
 					<button id="quit-game" class="button" onclick="quitGame()" onfocusout="notQuitGame()">Quit Game</button>
-				<!--</a>-->
-
-				<a href="#">
-					<button class="button button-filled" onclick="currPlayerCurrPoints()">Next Player</button>
 				</a>
+
+				<button class="button button-filled" onclick="currPlayerCurrPoints()">Next Player</button>
 
 			</div>
 
 			<div class="vspace-middle"></div>
 
-			<button class="button button-filled" onclick="checkCurrentPlayer()">Test Button</button>
-
-			<a href="endscreen.html">
+			<a href="./endscreen">
 				<button class="button button-filled">End Game</button>
 			</a>
 
