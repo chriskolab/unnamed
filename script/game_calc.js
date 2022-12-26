@@ -231,6 +231,7 @@ function currPlayerNewPoints() {
 	// Save new player points
 	arrPlayerPoints[currentPlayer - 1] = currentPlayerPoints.toString();
 	strPlayerPoints = arrPlayerPoints.toString();					//arr2str
+	localStorage.setItem("player-points", strPlayerPoints);
 
 	//Continue with next player
 	getNextPlayer();
