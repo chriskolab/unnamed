@@ -203,9 +203,9 @@ function sortByPlayerPoints() {
 			temp_switch = 0;
 		}
 
-		//console.log(allPlayerNames);
-		//console.log(temp_switch);
-		//console.log(j);
+		console.log(allPlayerNames);
+		console.log(temp_switch);
+		console.log(j);
 
 		document.getElementById("row-" + rowID).innerHTML = allPlayerNames;
 
