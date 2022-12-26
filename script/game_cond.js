@@ -38,7 +38,7 @@ function storeCond() {
   playerPoints = playerPoints.substring(0, playerPoints.length - 1);
 
   //Calculate game mode
-  if (cond1 > cond2) {
+  if (startPoints > finalPoints) {
     gameMode += 1;
   }
 
