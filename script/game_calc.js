@@ -51,6 +51,7 @@ function getNextPlayer() {
 	var strPlayerPoints = localStorage.getItem("player-points");
 	var numPlayers = localStorage.getItem("num-players");
 	var currentPlayer = localStorage.getItem("current-player");
+	var gameRound = localStorage.getItem("game-round");
 
 	if (currentPlayer < numPlayers) {
 		//Get next player
