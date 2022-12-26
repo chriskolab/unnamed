@@ -13,12 +13,17 @@ function checkCurrentPlayer() {
 	var strPlayerPoints = localStorage.getItem("player-points");
 	var currentPlayer = localStorage.getItem("current-player");
 
+	//Str2Num
+	gameMode = Number(gameMode);
+	finalPoints = Number(finalPoints);
+	currentPlayer = Number(currentPlayer);
+
 	//Get current player points
 	const arrPlayerPoints = strPlayerPoints.split(",");         //str2arr
-	var currentPlayerPoints = arrPlayerPoints[currentPlayer - 1];
+	var currentPlayerPoints = Number(arrPlayerPoints[currentPlayer - 1]);
 
 	//Go to next step in game cycle
-	switch(Number(gameMode)) {
+	switch(gameMode) {
 	case 0: case 2: case 4: case 6:
 		if (currentPlayerPoints >= finalPoints) {
 			getNextPlayer();
@@ -54,6 +59,13 @@ function getNextPlayer() {
 	var currentPlayer = localStorage.getItem("current-player");
 	var gameRound = localStorage.getItem("game-round");
 
+	//Str2Num
+	gameMode = Number(gameMode);
+	numPlayers = Number(numPlayers);
+	currentPlayer = Number(currentPlayer);
+	gameRound = Number(gameRound);
+
+	//
 	if (currentPlayer < numPlayers) {
 		//Get next player
 		currentPlayer++;
@@ -65,7 +77,7 @@ function getNextPlayer() {
 		const arrPlayerPoints = strPlayerPoints.split(",").map(Number);         //str2arr of numbers
 
 		//Check end of game
-		switch(Number(gameMode)) {
+		switch(gameMode) {
 		case 0: case 1: case 2: case 3:
 			if (arrPlayerPoints.some(checkPoints)) {				//Check player points - one player reaches final points
 				window.location = "./endscreen";
@@ -104,7 +116,12 @@ function checkPoints(points) {
 	var gameMode = localStorage.getItem("game-mode");
 	var finalPoints = localStorage.getItem("final-points");
 
-	switch(Number(gameMode)) {
+	//Str2Num
+	gameMode = Number(gameMode);
+	finalPoints = Number(finalPoints);
+	points = Number(points);
+
+	switch(gameMode) {
 	case 0: case 2: case 4: case 6:
 		return points >= finalPoints;
 
@@ -182,6 +199,10 @@ function currPlayerNewPoints() {
 	var strPlayerPoints = localStorage.getItem("player-points");
 	var currentPlayer = localStorage.getItem("current-player");
 
+	//Str2Num
+	gameMode = Number(gameMode);
+	currentPlayer = Number(currentPlayer);
+
 	//Display current player and points in blurry
 	const arrPlayerNames = strPlayerNames.split(",");					//str2arr
 	var currentPlayerName = arrPlayerNames[currentPlayer - 1];
@@ -197,7 +218,7 @@ function currPlayerNewPoints() {
 	currentPlayerPoints = Number(currentPlayerPoints) 				//str2num
 
 	// Calculate points for next game round
-	switch(Number(gameMode)) {
+	switch(gameMode) {
 	case 0: case 2: case 4: case 6:
 		currentPlayerPoints += Number(document.getElementById("enter-number").value);
 		break;
@@ -220,7 +241,6 @@ function currPlayerNewPoints() {
 //
 function loadingScreen() {
 
-	console.log("----------loadingScreen");
 	document.getElementById("main-stats").style.display = "none";
 	document.getElementById("loading-screen").style.display = "flex";
 
@@ -244,7 +264,10 @@ function openPopup() {
 	//Get data from web storage
 	var gameMode = localStorage.getItem("game-mode");
 
-	switch(Number(gameMode)) {
+	//Str2Num
+	gameMode = Number(gameMode);
+
+	switch(gameMode) {
 	case 0: case 2: case 4: case 6:
 		document.getElementById("enter-number").placeholder = "Points to add";
 
