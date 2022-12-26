@@ -21,9 +21,13 @@ function checkCurrentPlayer() {
 	const arrPlayerPoints = strPlayerPoints.split(",");         //str2arr
 	var currentPlayerPoints = arrPlayerPoints[currentPlayer - 1];
 
+	console.log(currentPlayerPoints);
+	console.log(finalPoints);
+
 	//Go to next step in game cycle
 	switch(gameMode) {
 	case 0: case 2: case 4: case 6:
+		console.log("----------checkCurrentPlayer after switch case");
 		if (currentPlayerPoints >= finalPoints) {
 			getNextPlayer();
 		} else {
