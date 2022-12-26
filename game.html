@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>SCO</title>
+
+	<link rel="stylesheet" href="style/general.css">
+	<link rel="stylesheet" href="style/inputs.css">
+	<script src="script/game_calc.js"></script>
+</head>
+<body onload="checkCurrentPlayer()">
+
+	<div class="header">
+		<div style="font-size:50px">Score Count Online</div>
+		<div style="font-size:20px">by ChrisKolab</div>
+		<div class="vspace-small"></div>
+	</div>
+
+	<hr class="big">
+
+	<div class="main-container">
+
+		<div class="container-area-content">
+
+			<div class="container-subarea-loading blurry" id="loading-screen">
+				
+				<div class="vspace-middle"></div>
+
+				<p id="current-turn-name-loading">...</p>
+
+				<div>Round m</div>
+				<div>Player 1/n</div>
+
+				<div class="vspace-middle"></div>
+
+				<div style="font-size:35px"><b>...</b></div>
+
+				<div class="vspace-large"></div>
+
+			</div>
+
+			<div class="container-subarea-stats" id="main-stats">
+
+				<div class="vspace-middle"></div>
+
+				<p id="current-turn-name">JOHN DOE'S TURN</p>
+
+				<div id="current-round">Round m</div>
+				<div id="current-player">Player 1/n</div>
+
+				<div class="vspace-middle"></div>
+
+				<div id="game-points" style="font-size:35px"><b>0</b></div>
+
+				<div class="vspace-large" id="main-space"></div>
+
+			</div>
+
+			<div class="container-subarea-popup" id="popup-form">
+
+				<div class="vspace-tiny"></div>
+
+				<div class="container-subarea-gamecond">
+					<input style="flex: 0 0 20%" type="number" id="enter-number" class="number-input">
+				</div>
+
+				<div class="vspace-small"></div>
+
+				<div class="container-subarea-buttons">
+					<button class="button" onclick="closePopup()">Cancel</button>
+					<a href="#">
+						<button class="button button-filled" onclick="currPlayerNewPoints()">Confirm & Next Player</button>
+					</a>
+				</div>
+			</div>
+
+			<div class="container-subarea-buttons" id="main-buttons-1">
+				<a href="#">
+					<button class="button-inactive">Leaderboard</button>
+				</a>
+
+				<a href="#">
+					<button class="button" onclick="openPopup()">Enter Points</button>
+				</a>
+			</div>
+
+			<div class="vspace-small"></div>
+
+			<div class="container-subarea-buttons" id="main-buttons-2">
+				<!--<a href="index.html">-->
+					<button id="quit-game" class="button" onclick="quitGame()" onfocusout="notQuitGame()">Quit Game</button>
+				<!--</a>-->
+
+				<a href="#">
+					<button class="button button-filled" onclick="currPlayerCurrPoints()">Next Player</button>
+				</a>
+
+			</div>
+
+			<div class="vspace-middle"></div>
+
+			<button class="button button-filled" onclick="checkCurrentPlayer()">Test Button</button>
+
+			<a href="endscreen.html">
+				<button class="button button-filled">End Game</button>
+			</a>
+
+		</div>
+
+	</div>
+
+	<hr class="big">
+
+	<div class="footer">
+		<div class="revision"></div>
+		<div>
+			Help
+		</div>
+	</div>
+
+</body>
+</html>
