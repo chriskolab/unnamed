@@ -253,3 +253,8 @@ Whitespace
 ################################################################################
 Additionals
 */
+
+.blurry {
+  color: transparent;
+  text-shadow: 0 0 10px black;
+}
