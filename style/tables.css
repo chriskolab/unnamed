@@ -1,0 +1,22 @@
+/*
+################################################################################
+Leaderboard
+*/
+
+.leaderboard-endscreen {
+  width: 90%;
+
+}
+
+.leaderboard-endscreen td {
+  border-bottom: 2px solid darkgrey;
+}
+
+.leaderboard {
+
+}
+
+/*
+################################################################################
+Whiteboard
+*/
