@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>SCO</title>
+
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/script.js"></script>
+</head>
+<body>
+
+	<div class="header">
+		<div style="font-size:50px">Score Count Online</div>
+		<div style="font-size:20px">by ChrisKolab</div>
+		<div class="vspace-small"></div>
+	</div>
+
+	<hr class="big">
+
+	<div class="main-container">
+		<div class="container-area-content">
+
+			<div class="vspace-middle"></div>
+
+			<p>GAME CONDITIONS</p>
+
+			<div class="vspace-small"></div>
+
+			<div class="container-subarea-gamecond">
+				<div style="flex: 0 0 15%"></div>
+				<label style="flex: 0 0 40%" for="cond-1">Players start at ... points</label>
+				<div style="flex: 1 1 auto"></div>
+				<input style="flex: 0 0 20%" type="number" id="cond-1" class="number-input">
+				<div style="flex: 0 0 15%"></div>
+			</div>
+			<div class="container-subarea-gamecond">
+				<div style="flex: 0 0 15%"></div>
+				<label style="flex: 0 0 40%" for="cond-2">Game ends at ... points</label>
+				<div style="flex: 1 1 auto"></div>
+				<input style="flex: 0 0 20%" type="number" id="cond-2" class="number-input">
+				<div style="flex: 0 0 15%"></div>
+			</div>
+			<div class="container-subarea-gamecond">
+				<div style="flex: 0 0 15%"></div>
+				<label style="flex: 0 0 40%" for="cond-3">Winning condition</label>
+				<div style="flex: 1 1 auto"></div>
+				<select style="flex: 0 0 24.8%" id="cond-3" class="combobox-input">
+					<option value="-100" selected disabled hidden></option>
+					<option value="0">Highest points</option>
+					<option value="2">Lowest points</option>
+				</select>
+				<div style="flex: 0 0 15%"></div>
+			</div>
+			<div class="container-subarea-gamecond">
+				<div style="flex: 0 0 15%"></div>
+				<label style="flex: 0 0 60%" for="cond-4">Players need to get above/below final points</label>
+				<div style="flex: 1 1 auto"></div>
+				<input type="checkbox" id="cond-4">
+				<div style="flex: 0 0 3.5%" class="tooltip">&nbsp;&#9432;
+					<span class="tooltiptext">Example:<br>The final points are 10000. If selected, a player only wins the game, if one gets above the finals points, i.e. at least 10001.</span>
+				</div>
+				<div style="flex: 0 0 11.5%"></div>
+			</div>
+			<div class="container-subarea-gamecond">
+				<div style="flex: 0 0 15%"></div>
+				<label style="flex: 0 0 60%" for="cond-5">Game ends when one player hits final points</label>
+				<div style="flex: 1 1 auto"></div>
+				<input type="checkbox" id="cond-5">
+				<div style="flex: 0 0 3.5%" class="tooltip">&nbsp;&#9432;
+					<span class="tooltiptext">After one player reaches the final points, the ongoing round is going to be the last round of the game.</span>
+				</div>
+				<div style="flex: 0 0 11.5%"></div>
+			</div>
+
+			<div class="vspace-middle"></div>
+
+			<p>PLAYERS</p>
+
+			<div class="vspace-small"></div>
+
+			<div>
+				<label for="num-players">Number of players</label>
+
+				<div class="hspace-small"></div>
+
+				<div class="number-sel-input">
+		  			<button id="number-step-dn" onclick="numPlayerDn()" ><b>-</b></button>
+					<input type="number" id="num-players" min="0" max="255" value="0" onchange="playerNames()">
+					<button id="number-step-up" onclick="numPlayerUp()" ><b>+</b></button>
+				</div>
+
+				<!--<input type="number" id="num-players" min="0" max="255" value="0" onclick="numberOfPlayers()">-->
+			</div>
+
+			<div class="vspace-small"></div>
+			
+			<div id="player-names" class="container-subarea-players"></div>
+
+
+			<div class="vspace-large"></div>
+
+			<div class="container-subarea-buttons">
+				<a href="index.html">
+					<button class="button">Cancel</button>
+				</a>
+
+				<a href="game.html">
+					<button class="button button-filled" onclick="storeCond()">Start Game</button>
+				</a>
+			</div>
+
+			<div class="vspace-middle"></div>
+
+			<button class="button button-filled" onclick="storeCond()">Test Button</button>
+
+			<div id="test"></div>
+
+		</div>
+	</div>
+
+	<hr class="big">
+
+	<div class="footer">
+		<div class="revision"></div>
+		<div>
+			Help
+		</div>
+	</div>
+
+</body>
+</html>
