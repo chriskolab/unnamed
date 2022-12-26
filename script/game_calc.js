@@ -9,6 +9,7 @@ function checkCurrentPlayer() {
 
 	//Get data from web storage
 	var gameMode = localStorage.getItem("game-mode");
+	var finalPoints = localStorage.getItem("final-points");
 	var strPlayerPoints = localStorage.getItem("player-points");
 	var currentPlayer = localStorage.getItem("current-player");
 
