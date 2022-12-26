@@ -3,15 +3,6 @@ DESCRIPTION
 */
 
 
-//Output for debugging
-document.getElementById("test").innerHTML = localStorage.getItem("game-mode") + "/" +
-localStorage.getItem("start-points") + "/" +
-localStorage.getItem("final-points") + "/" +
-localStorage.getItem("num-players") + "/" +
-localStorage.getItem("player-names") + "/" +
-localStorage.getItem("player-points") + "/" +
-localStorage.getItem("game-round") + "/" +
-localStorage.getItem("current-player");
 
 //Check current player against final points
 function checkCurrentPlayer() {
@@ -119,7 +110,7 @@ function checkPoints(points) {
 
 	case 1: case 3: case 5: case 7:
 		return points <= finalPoints;
-		
+
 		break;
 
 	}
