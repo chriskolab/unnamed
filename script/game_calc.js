@@ -13,7 +13,7 @@ function checkCurrentPlayer() {
 	var strPlayerPoints = localStorage.getItem("player-points");
 	var currentPlayer = localStorage.getItem("current-player");
 
-	console.log(gameMode);
+	console.log(Number(gameMode));
 	console.log(strPlayerPoints);
 	console.log(currentPlayer);
 
@@ -25,7 +25,7 @@ function checkCurrentPlayer() {
 	console.log(finalPoints);
 
 	//Go to next step in game cycle
-	switch(gameMode) {
+	switch(Number(gameMode)) {
 	case 0: case 2: case 4: case 6:
 		console.log("----------checkCurrentPlayer after switch case");
 		if (currentPlayerPoints >= finalPoints) {
