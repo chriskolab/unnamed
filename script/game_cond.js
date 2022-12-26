@@ -58,6 +58,7 @@ function storeCond() {
   localStorage.setItem("game-round", "1");        //Initial game states
   localStorage.setItem("current-player", "1");        //Initial game states
 
+  /*
   //Output for debugging
   document.getElementById("test").innerHTML = localStorage.getItem("game-mode") + "/" +
   localStorage.getItem("start-points") + "/" +
@@ -67,6 +68,7 @@ function storeCond() {
   localStorage.getItem("player-points") + "/" +
   localStorage.getItem("game-round") + "/" +
   localStorage.getItem("current-player");
+  */
 
 }
 
