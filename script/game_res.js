@@ -45,7 +45,7 @@ function calcFinalStanding() {
 
 
 //
-function sortByPlayerPoints() {
+function sortByPlayerPoints(numRows) {
 
 	//Get data from web storage
 	var gameMode = localStorage.getItem("game-mode");
