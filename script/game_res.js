@@ -142,9 +142,7 @@ function createTable(numRows, numCols) {
 
 	//Create empty table
 	const tbdy = document.createElement("tbody");
-
-	tbl.style.width = "100%";
-	tbl.setAttribute("border", "1");
+	tbl.setAttribute("class", "leaderboard-endscreen");
 
 	for (var i = 0; i < numRows; i++) {
 
