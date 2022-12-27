@@ -205,7 +205,7 @@ function sortByPlayerPoints() {
 
 		console.log(allPlayerNames);
 		console.log(temp_switch);
-		console.log(j);
+		console.log(i);
 
 		document.getElementById("row-" + rowID).innerHTML = allPlayerNames;
 
