@@ -8,6 +8,7 @@
 
 	<link rel="stylesheet" href="style/general.css">
 	<link rel="stylesheet" href="style/inputs.css">
+	<script src="script/general.js"></script>
 	<script src="script/game_cond.js"></script>
 	<script src="script/webstorage.js"></script>
 </head>
@@ -99,8 +100,16 @@
 				</a>
 
 				<a href="./game">
-					<button class="button button-filled" onclick="storeCond()">Start Game</button>
+					<button class="button button-filled" onclick="checkEntries()">Start Game</button>
 				</a>
+			</div>
+
+			<div class="popup-information" id="popup-information">
+				<h4 id="popup-head-text">HEADLINE</h4>
+				<hr>
+				<p id="popup-info-text">Information</p>
+				<div class="vspace-small"></div>
+				<button class="button button-filled" onclick="closePopup()">Ok</button>
 			</div>
 
 			<div class="vspace-middle"></div>

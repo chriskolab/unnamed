@@ -8,6 +8,7 @@
 
 	<link rel="stylesheet" href="style/general.css">
 	<link rel="stylesheet" href="style/inputs.css">
+	<script src="script/general.js"></script>
 	<script src="script/game_calc.js"></script>
 </head>
 <body onload="checkCurrentPlayer()">
@@ -69,7 +70,7 @@
 				<div class="vspace-small"></div>
 
 				<div class="container-subarea-buttons">
-					<button class="button" onclick="closePopup()">Cancel</button>
+					<button class="button" onclick="closeEntryField()">Cancel</button>
 					<button class="button button-filled" onclick="currPlayerNewPoints()">Confirm & Next Player</button>
 				</div>
 			</div>
@@ -79,7 +80,7 @@
 					<button class="button-inactive">Leaderboard</button>
 				</a>
 
-				<button class="button" onclick="openPopup()">Enter Points</button>
+				<button class="button" onclick="openEntryField()">Enter Points</button>
 			</div>
 
 			<div class="vspace-small"></div>
