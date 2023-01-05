@@ -256,7 +256,7 @@ function loadingScreen() {
 
 
 //
-function openPopup() {
+function openEntryField() {
 	document.getElementById("popup-form").style.display = "block";
 	document.getElementById("main-buttons-1").style.display = "none";
 	document.getElementById("main-buttons-2").style.display = "none";
@@ -284,7 +284,7 @@ function openPopup() {
 
 
 //
-function closePopup() {
+function closeEntryField() {
 	document.getElementById("popup-form").style.display = "none";
 	document.getElementById("main-buttons-1").style.display = "inline-flex";
 	document.getElementById("main-buttons-2").style.display = "inline-flex";

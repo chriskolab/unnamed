@@ -5,6 +5,50 @@ DESCRIPTION
 
 
 //
+function checkEntries() {
+
+  var cond1 = document.getElementById("cond-1").value;
+  var cond2 = document.getElementById("cond-2").value;
+  var cond3 = document.getElementById("cond-3").value;
+  var numPlayers = document.getElementById("num-players").value;
+
+  var entries = true;
+  var errHead = "Game can not start"
+  var errInfo = "Please recheck following fields:<br>"
+
+  if (!cond1) {
+    entries = false;
+    errInfo += "- <b>Start points</b>: Not set or not a number.<br>";
+  }
+
+  if (!cond2) {
+    entries = false;
+    errInfo += "- <b>Final points</b>: Not set or not a number.<br>";
+  }
+
+  if (cond3 == -100) {
+    entries = false;
+    errInfo += "- <b>Winning condition</b>: Not set.<br>";
+  }
+
+  if (numPlayers == 0) {
+    entries = false;
+    errInfo += "- <b>Number of players</b>: Must be at least 1.<br>";
+  }
+
+  if (entries) {
+    storeCond();
+
+  } else {
+    openPopup(errHead,errInfo);
+    
+  }
+
+}
+
+
+
+//
 function storeCond() {
 
   //Clear web storage
