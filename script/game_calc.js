@@ -250,7 +250,7 @@ function loadingScreen() {
     document.getElementById("main-stats").style.display = "flex";
 	}, Math.floor(Math.random() * (300)) + 400);							//Get random number for timeout (max-min + min)
 
-	closePopup();
+	closeEntryField();
 }
 
 
