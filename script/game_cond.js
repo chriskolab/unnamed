@@ -41,7 +41,7 @@ function checkEntries() {
 
   } else {
     openPopup(errHead,errInfo);
-    
+
   }
 
 }
@@ -101,6 +101,9 @@ function storeCond() {
   localStorage.setItem("player-points", playerPoints);
   localStorage.setItem("game-round", "1");        //Initial game states
   localStorage.setItem("current-player", "1");        //Initial game states
+
+  //Start game
+  window.location = "./game";
 
   /*
   //Output for debugging
