@@ -295,6 +295,29 @@ function closeEntryField() {
 
 
 //
+function checkInput() {
+
+	var input = document.getElementById("enter-number").value;
+
+	var entries = true;
+	var errHead = "Wrong User Input";
+	var errInfo = "Input must be a number:<br>- Check for empty field.<br>- Check for letters.<br>- Use a '.' for decimals.";
+
+	if (input === "") {
+		entries = false;
+	}
+
+	if (entries) {
+		currPlayerNewPoints();
+	} else {
+		openPopup(errHead,errInfo);
+	}
+
+}
+
+
+
+//
 function quitGame() {
 
 	var btn = document.getElementById("quit-game");
