@@ -10,7 +10,7 @@ function calcFinalStanding() {
 	//Get data from web storage
 	var gameMode = localStorage.getItem("game-mode");
 	var strPlayerPoints = localStorage.getItem("player-points");
-	var strPlayerRounds = localStorage.getItem("player-round")
+	var strPlayerRounds = localStorage.getItem("player-rounds")
 
 	//Str2Num
 	gameMode = Number(gameMode);
