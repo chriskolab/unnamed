@@ -10,33 +10,34 @@ function calcFinalStanding() {
 	//Get data from web storage
 	var gameMode = localStorage.getItem("game-mode");
 	var strPlayerPoints = localStorage.getItem("player-points");
+	var strPlayerRounds = localStorage.getItem("player-round")
 
 	//Str2Num
 	gameMode = Number(gameMode);
 
 	switch(gameMode) {
-	case 0: case 1: case 2: case 3: case 4: case 5: case 6: case 7:
+	case 0: case 1: case 2: case 3:
 
 		//Get number of rows for result table
 		const arrPlayerPoints = strPlayerPoints.split(",").map(Number);
 		var numRows = new Set(arrPlayerPoints).size;
 
 		createTable(numRows,3);
-		sortedArray = sortByPlayerPoints(numRows);
+		sortedArray = sortPlayers(numRows);
 
 		break;
-/*
+
 	case 4: case 5: case 6: case 7:
 
-		//Get number of rows for result table???
+		//Get number of rows for result table
 		const arrPlayerRounds = strPlayerRounds.split(",").map(Number);
 		var numRows = new Set(arrPlayerRounds).size;
 
 		createTable(numRows,4);
-		sortedArray = sortByGameRound(gameMode,numRows);
+		sortedArray = sortPlayers(numRows);
 
 		break;
-*/
+
 	}
 
 	fillTable(sortedArray);
@@ -44,13 +45,13 @@ function calcFinalStanding() {
 
 
 
-//NOT IN USE IN CURRENT VERSION
 //
-function sortByPlayerPoints(numRows) {
+function sortPlayers(numRows) {
 
 	//Get data from web storage
 	var gameMode = localStorage.getItem("game-mode");
 	var strPlayerPoints = localStorage.getItem("player-points");
+	var strPlayerRounds = localStorage.getItem("player-rounds");
 	var strPlayerNames = localStorage.getItem("player-names");
 
 	//Str2Num
@@ -60,6 +61,7 @@ function sortByPlayerPoints(numRows) {
 	var arrPosition = [];
 	var arrPlayers = [];
 	var arrPoints = [];
+	var arrRounds = [];
 
 	//Fill array for positions
 	for (var i = 0; i < numRows; i++) {
@@ -72,65 +74,122 @@ function sortByPlayerPoints(numRows) {
 	arrPlayerPointsShort = Array.from(setPlayerPoints);				//set2arr
 
 	//Get sorted indeces from player points
-	indexedArr = arrPlayerPointsShort.map(function(e,i){return {ind: i, val: e}});				//Create array with indices and values
-	indexedArr.sort(function(x, y){return x.val > y.val ? 1 : x.val == y.val ? 0 : -1});			//Sort index/value couples, based on values
+	indexedPointsArr = arrPlayerPointsShort.map(function(e,i){return {ind: i, val: e}});				//Create array with indices and values
+	indexedPointsArr.sort(function(x, y){return x.val > y.val ? 1 : x.val == y.val ? 0 : -1});			//Sort index/value couples, based on values
 	
+
+	//Remove duplicates in player rounds by temporary creating a set
+	var arrPlayerRounds = strPlayerRounds.split(",").map(Number);         //str2arr of numbers
+	var setPlayerRounds = new Set(arrPlayerRounds);				//arr2set
+	arrPlayerRoundsShort = Array.from(setPlayerRounds);				//set2arr
+
+	//Get sorted indeces from player rounds
+	indexedRoundsArr = arrPlayerRoundsShort.map(function(e,i){return {ind: i, val: e}});				//Create array with indices and values
+	indexedRoundsArr.sort(function(x, y){return x.val > y.val ? 1 : x.val == y.val ? 0 : -1});			//Sort index/value couples, based on values
+	
+
 	//Make list keeping only indices and reverse order depending on game mode
 	switch(gameMode) {
-	case 0: case 1: case 4: case 5:
-		indices = indexedArr.map(function(e){return e.ind}).reverse();
+	case 0: case 1:
+		indices = indexedPointsArr.map(function(e){return e.ind}).reverse();
+
+		//Fill array for player points
+		for (var i = 0; i < numRows; i++) {
+			arrPoints[i] = arrPlayerPointsShort[indices[i]];
+		}
+
+		var arrSorted = arrPoints;
+		var arrPlayerSorted = arrPlayerPoints;
+
 		break;
 
-	case 2: case 3: case 6: case 7:
-		indices = indexedArr.map(function(e){return e.ind});
+	case 2: case 3:
+		indices = indexedPointsArr.map(function(e){return e.ind});
+
+		//Fill array for player points
+		for (var i = 0; i < numRows; i++) {
+			arrPoints[i] = arrPlayerPointsShort[indices[i]];
+		}
+
+		var arrSorted = arrPoints;
+		var arrPlayerSorted = arrPlayerPoints;
+
+		break;
+
+	case 4: case 5: case 6: case 7:
+		indices = indexedRoundsArr.map(function(e){return e.ind});
+
+		//Fill array for player points
+		for (var i = 0; i < numRows; i++) {
+			arrRounds[i] = arrPlayerRoundsShort[indices[i]];
+		}
+
+		var arrSorted = arrRounds;
+		var arrPlayerSorted = arrPlayerRounds;
+
 		break;
 	}
 
-	//Fill array for player points
-	for (var i = 0; i < numRows; i++) {
-		arrPoints[i] = arrPlayerPointsShort[indices[i]];
-	}
 
 	var arrPlayerNames = strPlayerNames.split(",");				//str2arr
 
 	//Fill array for player names
 	for (var i = 0; i < arrPlayerNames.length; i++) {
 
-		for (var j = 0; j < arrPoints.length; j++) {
+		for (var j = 0; j < arrSorted.length; j++) {
 
-			var playerPoints = arrPlayerPoints[i];
-			var sortedPoints = arrPoints[j];
+			var temp_playerNumber = arrPlayerSorted[i];
+			var temp_sortedNumber = arrSorted[j];
 
-			if (playerPoints == sortedPoints) {
+			if (temp_playerNumber == temp_sortedNumber) {
 				arrPlayers[j] += arrPlayerNames[i] + "<br>";
+
+				//Get player points when sorting by player rounds
+				switch(gameMode) {
+				case 4: case 5: case 6: case 7:
+					arrPoints[j] += arrPlayerPoints[i] + "<br>";
+					break;
+				}
 				
 			}
+
 		}
+
 	}
 
 	//Remove string "undefinded" in every array element
 	for (var i = 0; i < arrPlayers.length; i++) {
 		arrPlayers[i] = arrPlayers[i].substring(9);
+
+		switch(gameMode) {
+		case 4: case 5: case 6: case 7:
+			arrPoints[i] = arrPoints[i].substring(9);
+			break;
+		}
+
 	}
 
-	sortedArray = [arrPosition, arrPlayers, arrPoints]
+	console.log(arrPosition);
+	console.log(arrPlayers);
+	console.log(arrRounds);
+	console.log(arrPoints);
+
+
+	switch(gameMode) {
+	case 0: case 1: case 2: case 3:
+		sortedArray = [arrPosition, arrPlayers, arrPoints];
+		break;
+
+	case 4: case 5: case 6: case 7:
+		sortedArray = [arrPosition, arrPlayers, arrRounds, arrPoints];
+		break;
+	}
+	
 
 	return sortedArray;
-}
-
-
-
-//
-function sortByGameRound() {
-
-}
-
-
-
-//
-function sortPlayers() {
 	
 }
+
 
 
 
