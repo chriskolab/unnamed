@@ -65,6 +65,8 @@ function storeCond() {
   //Store player names and points in a string
   var playerNames = "";
   var playerPoints = "";
+  var playerRound = "";
+  var num = 0;
 
   for(i=0;i<numPlayers;i++) {
 
@@ -75,6 +77,9 @@ function storeCond() {
 
     playerPoints += startPoints.toString();
     playerPoints += ",";
+
+    playerRound += num.toString();
+    playerRound += ",";
 
   }
 
@@ -99,6 +104,7 @@ function storeCond() {
   localStorage.setItem("num-players", numPlayers);
   localStorage.setItem("player-names", playerNames);
   localStorage.setItem("player-points", playerPoints);
+  localStorage.setItem("player-round", playerRound);
   localStorage.setItem("game-round", "1");        //Initial game states
   localStorage.setItem("current-player", "1");        //Initial game states
 
