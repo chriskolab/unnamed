@@ -44,6 +44,7 @@ function calcFinalStanding() {
 
 
 
+//NOT IN USE IN CURRENT VERSION
 //
 function sortByPlayerPoints(numRows) {
 
@@ -122,6 +123,13 @@ function sortByPlayerPoints(numRows) {
 //
 function sortByGameRound() {
 
+}
+
+
+
+//
+function sortPlayers() {
+	
 }
 
 
