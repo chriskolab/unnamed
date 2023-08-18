@@ -65,8 +65,8 @@ function storeCond() {
   //Store player names and points in a string
   var playerNames = "";
   var playerPoints = "";
-  var playerRound = "";
-  var num = 0;
+  var playerRounds = "";
+  var roundCounter = 0;
 
   for(i=0;i<numPlayers;i++) {
 
@@ -78,13 +78,14 @@ function storeCond() {
     playerPoints += startPoints.toString();
     playerPoints += ",";
 
-    playerRound += num.toString();
-    playerRound += ",";
+    playerRounds += roundCounter.toString();
+    playerRounds += ",";
 
   }
 
   playerNames = playerNames.substring(0, playerNames.length - 1);
   playerPoints = playerPoints.substring(0, playerPoints.length - 1);
+  playerRounds = playerRounds.substring(0, playerRounds.length - 1);
 
   //Calculate game mode
   if (Number(startPoints) > Number(finalPoints)) {
@@ -104,7 +105,7 @@ function storeCond() {
   localStorage.setItem("num-players", numPlayers);
   localStorage.setItem("player-names", playerNames);
   localStorage.setItem("player-points", playerPoints);
-  localStorage.setItem("player-round", playerRound);
+  localStorage.setItem("player-rounds", playerRounds);
   localStorage.setItem("game-round", "1");        //Initial game states
   localStorage.setItem("current-player", "1");        //Initial game states
 
