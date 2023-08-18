@@ -144,6 +144,7 @@ function playCurrentPlayer() {
 	var gameRound = localStorage.getItem("game-round");
 	var strPlayerNames = localStorage.getItem("player-names");
 	var strPlayerPoints = localStorage.getItem("player-points");
+	var strPlayerRounds = localStorage.getItem("player-rounds");
 	var numPlayers = localStorage.getItem("num-players");
 	var currentPlayer = localStorage.getItem("current-player");
 
@@ -163,7 +164,21 @@ function playCurrentPlayer() {
 
 	document.getElementById("current-turn-name").innerHTML = currentPlayerName;
 	document.getElementById("game-points").innerHTML = currentPlayerPoints;
-  
+
+	//Add game round to current player
+	currentPlayer = Number(currentPlayer);
+
+	const arrPlayerRounds = strPlayerRounds.split(",");         //str2arr
+
+	var currentPlayerRounds = arrPlayerRounds[currentPlayer - 1];
+	currentPlayerRounds = Number(currentPlayerRounds) 				//str2num
+
+	currentPlayerRounds += 1;
+
+	//Save new player round
+	arrPlayerRounds[currentPlayer - 1] = currentPlayerRounds.toString();
+	strPlayerRounds = arrPlayerRounds.toString();					//arr2str
+	localStorage.setItem("player-rounds", strPlayerRounds);
 }
 
 
